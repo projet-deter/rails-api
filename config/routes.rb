@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'auth/login', to: 'users#login'
   get 'test', to: 'users#test'
 
-  #get 'articles/:id', to 'articles#show'
+  get 'articles/:id', to: 'articles#show'
 
   resources :articles
   resources :users

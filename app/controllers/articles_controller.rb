@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-    before_action :authenticate_user!, except: [:index, :show, :create]
+    before_action :authenticate_user!, except: [:index, :show, :create, :update, :destroy]
   
   
     def article_params

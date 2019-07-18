@@ -2,15 +2,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   post 'auth/register', to: 'users#register'
   post 'auth/login', to: 'users#login'
-  get 'test', to: 'users#test'
 
-  get 'articles/:id', to: 'articles#show'
-  delete 'articles/:id', to: 'articles#destroy'
 
-  resources :articles
-  resources :users
+  resources :articles do
+      resources :comments
+    end
 
-  #get 'articles/:id', to: 'articles#'
+    get "articles/:article_id/comments/:id", to: "comments#index"
 
   #resources :articles, param: :slug, except: [:index, :create, :edit, :new]
 end

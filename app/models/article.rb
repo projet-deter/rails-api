@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   belongs_to :user
-
+  has_many :comments, dependent: :destroy
   scope :authored_by, ->(username) { where(user: User.where(username: username)) }
 
   validates :title, presence: true, allow_blank: false

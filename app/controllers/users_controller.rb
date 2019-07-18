@@ -39,6 +39,7 @@ class UsersController < ApplicationController
         @user = User.find_by(email: params[:email])
         render json: {
           id: @user.id,
+          name: @user.name,
           email: @user.email,
           access_token: command.result,
           message: 'Login Successful'

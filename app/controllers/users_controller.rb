@@ -36,7 +36,7 @@ class UsersController < ApplicationController
       command = AuthenticateUser.call(email, password)
 
       if command.success?
-        @user = User.find_by(name: params[:name])
+        @user = User.find_by(email: params[:email])
         render json: {
           id: @user.id,
           email: @user.email,

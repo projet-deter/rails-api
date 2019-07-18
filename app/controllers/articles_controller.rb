@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-    before_action :authenticate_user!, except: [:index, :show, :create]
+    before_action :authenticate_user!, except: [:index, :show, :create, :update, :destroy]
   
   
     def article_params
@@ -31,11 +31,13 @@ class ArticlesController < ApplicationController
     end
 
     def show
-        @article = Article.find_by_slug!(params[:slug])
+        @article = Article.find_by_id!(params[:id])
+
+        render json: @article
     end
 
     def update
-        @article = Article.find_by_slug!(params[:slug])
+        @article = Article.find_by_id!(params[:id])
     
         if @article.user_id == @current_user_id
           @article.update_attributes(article_params)
@@ -47,9 +49,9 @@ class ArticlesController < ApplicationController
     end
 
     def destroy
-        @article = Article.find_by_slug!(params[:slug])
+        @article = Article.find_by_id!(params[:id])
     
-        if @article.user_id == @current_user_id
+        if @article.user_id == current_user.id
           @article.destroy
     
           render json: {}

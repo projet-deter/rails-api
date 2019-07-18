@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   post 'auth/login', to: 'users#login'
   get 'test', to: 'users#test'
 
+  get 'articles/:id', to: 'articles#show'
+  delete 'articles/:id', to: 'articles#destroy'
+
   resources :articles
   resources :users
 

@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
     def destroy
         @article = Article.find_by_id!(params[:id])
     
-        if @article.user_id == @current_user_id
+        if @article.user_id == current_user.id
           @article.destroy
     
           render json: {}

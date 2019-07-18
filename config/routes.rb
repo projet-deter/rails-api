@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'test', to: 'users#test'
 
   get 'articles/:id', to: 'articles#show'
+  delete 'articles/:id', to: 'articles#destroy'
 
   resources :articles
   resources :users

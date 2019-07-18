@@ -15,13 +15,13 @@ class CommentsController < ApplicationController
   def index
     @comments = @article.comments.order(created_at: :desc)
 
-    render json: @comments
+    render json: @comments, status: 200
   end
 
   def show
     @comments = @article.comments.order(created_at: :desc)
     @comment = Comment.find(params[:id])
-    render json: @comments
+    render json: @comments, status: 200
   end
 
   def create
@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
 
     if @comment.user_id == current_user.id
       @comment.destroy
-      render json: {}
+      render json: @comment, status: 200
     else
       render json: { errors: { comment: ['not owned by user'] } }, status: :forbidden
     end

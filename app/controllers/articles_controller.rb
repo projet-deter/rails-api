@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
     def update
         @article = Article.find_by_id!(params[:id])
     
-        if @article.user_id == @current_user_id
+        if @article.user_id == current_user.id
           @article.update_attributes(article_params)
     
           render :show

@@ -1,12 +1,17 @@
 # app/controllers/users_controller.rb
 class UsersController < ApplicationController
   skip_before_action :authenticate_request, only: %i[login register]
+
+  def user_params
+    params.require(:user).permit(:id, :name, :email)
+  end
+
    # POST /register
     def register
       @user = User.create(user_params)
      if @user.save
       response = { message: 'User created successfully'}
-      render json: response, status: :created
+      render json: response, status: 201
      else
       render json: @user.errors, status: :bad
      end
@@ -15,13 +20,6 @@ class UsersController < ApplicationController
     def login
       authenticate params[:email], params[:password]
     end
-    def test
-      render json: {
-            message: 'You have passed authentication and authorization test'
-          }
-    end
-
-    private
 
     def user_params
       params.permit(
@@ -45,7 +43,40 @@ class UsersController < ApplicationController
           message: 'Login Successful'
         }
       else
-        render json: { error: command.errors }, status: :unauthorized
+        render json: { error: command.errors }, status: 401
       end
-     end
+   end
+
+   def show
+     @user = User.find_by(id: params[:id])
+
+     render json: @user, status: 200
+   end
+
+   def update
+       @user = User.find_by_id!(params[:id])
+
+       if @user.id == current_user.id
+
+         @user.update_attributes(user_params)
+
+         render json: @user, status: 200
+       else
+         render json: { errors: { article: ['not owned by user'] } }, status: :forbidden
+       end
+   end
+
+   def destroy
+       @user = User.find_by_id!(params[:id])
+
+       if @user.id == current_user.id
+         @user.destroy
+
+         render json: {message: "Deleted"}
+       else
+         render json: { errors: { article: ['not owned by user'] } }, status: :forbidden
+       end
+   end
+
+
   end

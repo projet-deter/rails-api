@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
 
     def article_params
-      params.require(:article).permit(:title, :body, :description)
+      params.require(:article).permit(:id, :title, :body, :description, :category_id)
     end
 
     def index
@@ -15,35 +15,46 @@ class ArticlesController < ApplicationController
 
         @articles = Article.order(created_at: :desc).offset(params[:offset] || 0).limit(params[:limit] || 20)
 
-        render json: @articles
+        render json: @articles, status: 200
 
     end
 
     def create
-        @article = Article.new(article_params)
-        @article.user = current_user
 
-        if @article.save
-          render :show
+      @article = Article.find_by(title: params[:title])
+
+      if @article == nil
+          @article = Article.new(article_params)
+          @article.user = current_user
+
+
+          if @article.save
+            @article = Article.find_by(title: params[:title])
+
+            render json: @article, status: 201
+          else
+            render json: { errors: @article.errors }, status: :unprocessable_entity
+          end
         else
-          render json: { errors: @article.errors }, status: :unprocessable_entity
+          render json: { message: "Article title taken" }
+
         end
     end
 
     def show
-        @article = Article.find_by_id!(params[:id])
+        @article = Article.find_by(id: params[:id])
 
-        render json: @article
+        render json: @article, status: 200
     end
 
     def update
         @article = Article.find_by_id!(params[:id])
-    
+
         if @article.user_id == current_user.id
 
           @article.update_attributes(article_params)
 
-          render :show
+          render json: @article, status: 200
         else
           render json: { errors: { article: ['not owned by user'] } }, status: :forbidden
         end
@@ -55,7 +66,7 @@ class ArticlesController < ApplicationController
         if @article.user_id == current_user.id
           @article.destroy
 
-          render json: {}
+          render json: {message: "Deleted"}
         else
           render json: { errors: { article: ['not owned by user'] } }, status: :forbidden
         end
@@ -65,4 +76,3 @@ class ArticlesController < ApplicationController
 
 
 end
-  

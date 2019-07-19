@@ -6,9 +6,12 @@ Rails.application.routes.draw do
 
   resources :articles do
       resources :comments
-    end
 
-    get "articles/:article_id/comments/:id", to: "comments#index"
+    end
+    resources :categories
+
+
+    #post "articles/category/:id", to: "comments#index"
 
   #resources :articles, param: :slug, except: [:index, :create, :edit, :new]
 end

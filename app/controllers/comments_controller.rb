@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
 
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:id, :body)
   end
 
   def find_article!
@@ -28,7 +28,13 @@ class CommentsController < ApplicationController
     @comment = @article.comments.new(comment_params)
     @comment.user = current_user
 
-    render json: { errors: @comment.errors }, status: :unprocessable_entity unless @comment.save
+    if @comment.save
+
+      render json: { message: "Comment created" }
+    else
+      render json: { errors: @comment.errors }
+    end
+
   end
 
   def destroy
@@ -36,7 +42,7 @@ class CommentsController < ApplicationController
 
     if @comment.user_id == current_user.id
       @comment.destroy
-      render json: {}
+      render json: {message: "Comment deleted"}
     else
       render json: { errors: { comment: ['not owned by user'] } }, status: :forbidden
     end

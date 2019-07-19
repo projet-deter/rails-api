@@ -6,7 +6,7 @@ class UsersController < ApplicationController
       @user = User.create(user_params)
      if @user.save
       response = { message: 'User created successfully'}
-      render json: response, status: :created
+      render json: response, status: 201
      else
       render json: @user.errors, status: :bad
      end
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
           message: 'Login Successful'
         }
       else
-        render json: { error: command.errors }, status: :unauthorized
+        render json: { error: command.errors }, status: 401
       end
      end
   end

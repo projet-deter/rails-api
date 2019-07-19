@@ -5,6 +5,6 @@ class Article < ApplicationRecord
   #scope :authored_by, ->(name) { where(user: User.where(name: name)) }
 
   validates :title, presence: true, allow_blank: false
-  validates :body, presence: true, allow_blank: false
+  validates :description, presence: true, allow_blank: false
 
 end

@@ -76,6 +76,187 @@
 			"response": []
 		},
 		{
+			"name": "User READ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM1Mzk4OTR9.PGFLxCaMVeVZK3D5kMRZSx6OST3xyt9-d5WEwcBQlnY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User PUT",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM1MzY2MTR9.H2TQVwAw-Dyx0-G36N-jIwIODNgWtMdBfurL4QDUxyM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n       \"name\": \"Admin\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/articles/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User DELETE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM1Mzk4OTR9.PGFLxCaMVeVZK3D5kMRZSx6OST3xyt9-d5WEwcBQlnY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Comment READ",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/articles/1/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"articles",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "deb439a8-4d1a-432a-a9da-dd0022d1de4c"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.031688"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Length",
+							"value": "7015"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 404,\n    \"error\": \"Not Found\",\n    \"exception\": \"#<AbstractController::ActionNotFound: The action 'index' could not be found for CommentsController>\",\n    \"traces\": {\n        \"Application Trace\": [],\n        \"Framework Trace\": [\n            {\n                \"id\": 0,\n                \"trace\": \"actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'\"\n            },\n            {\n                \"id\": 1,\n                \"trace\": \"actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'\"\n            },\n            {\n                \"id\": 2,\n                \"trace\": \"actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'\"\n            },\n            {\n                \"id\": 3,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'\"\n            },\n            {\n                \"id\": 4,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'\"\n            },\n            {\n                \"id\": 5,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'\"\n            },\n            {\n                \"id\": 6,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'\"\n            },\n            {\n                \"id\": 7,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'\"\n            },\n            {\n                \"id\": 8,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'\"\n            },\n            {\n                \"id\": 9,\n                \"trace\": \"rack (2.0.3) lib/rack/etag.rb:25:in `call'\"\n            },\n            {\n                \"id\": 10,\n                \"trace\": \"rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'\"\n            },\n            {\n                \"id\": 11,\n                \"trace\": \"rack (2.0.3) lib/rack/head.rb:12:in `call'\"\n            },\n            {\n                \"id\": 12,\n                \"trace\": \"activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'\"\n            },\n            {\n                \"id\": 13,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'\"\n            },\n            {\n                \"id\": 14,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'\"\n            },\n            {\n                \"id\": 15,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'\"\n            },\n            {\n                \"id\": 16,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'\"\n            },\n            {\n                \"id\": 17,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'\"\n            },\n            {\n                \"id\": 18,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'\"\n            },\n            {\n                \"id\": 19,\n                \"trace\": \"railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'\"\n            },\n            {\n                \"id\": 20,\n                \"trace\": \"railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'\"\n            },\n            {\n                \"id\": 21,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'\"\n            },\n            {\n                \"id\": 22,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'\"\n            },\n            {\n                \"id\": 23,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'\"\n            },\n            {\n                \"id\": 24,\n                \"trace\": \"railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'\"\n            },\n            {\n                \"id\": 25,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'\"\n            },\n            {\n                \"id\": 26,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'\"\n            },\n            {\n                \"id\": 27,\n                \"trace\": \"rack (2.0.3) lib/rack/runtime.rb:22:in `call'\"\n            },\n            {\n                \"id\": 28,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'\"\n            },\n            {\n                \"id\": 29,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'\"\n            },\n            {\n                \"id\": 30,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'\"\n            },\n            {\n                \"id\": 31,\n                \"trace\": \"rack (2.0.3) lib/rack/sendfile.rb:111:in `call'\"\n            },\n            {\n                \"id\": 32,\n                \"trace\": \"rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'\"\n            },\n            {\n                \"id\": 33,\n                \"trace\": \"railties (5.1.4) lib/rails/engine.rb:522:in `call'\"\n            },\n            {\n                \"id\": 34,\n                \"trace\": \"puma (3.10.0) lib/puma/configuration.rb:225:in `call'\"\n            },\n            {\n                \"id\": 35,\n                \"trace\": \"puma (3.10.0) lib/puma/server.rb:605:in `handle_request'\"\n            },\n            {\n                \"id\": 36,\n                \"trace\": \"puma (3.10.0) lib/puma/server.rb:437:in `process_client'\"\n            },\n            {\n                \"id\": 37,\n                \"trace\": \"puma (3.10.0) lib/puma/server.rb:301:in `block in run'\"\n            },\n            {\n                \"id\": 38,\n                \"trace\": \"puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'\"\n            }\n        ],\n        \"Full Trace\": [\n            {\n                \"id\": 0,\n                \"trace\": \"actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'\"\n            },\n            {\n                \"id\": 1,\n                \"trace\": \"actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'\"\n            },\n            {\n                \"id\": 2,\n                \"trace\": \"actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'\"\n            },\n            {\n                \"id\": 3,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'\"\n            },\n            {\n                \"id\": 4,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'\"\n            },\n            {\n                \"id\": 5,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'\"\n            },\n            {\n                \"id\": 6,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'\"\n            },\n            {\n                \"id\": 7,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'\"\n            },\n            {\n                \"id\": 8,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'\"\n            },\n            {\n                \"id\": 9,\n                \"trace\": \"rack (2.0.3) lib/rack/etag.rb:25:in `call'\"\n            },\n            {\n                \"id\": 10,\n                \"trace\": \"rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'\"\n            },\n            {\n                \"id\": 11,\n                \"trace\": \"rack (2.0.3) lib/rack/head.rb:12:in `call'\"\n            },\n            {\n                \"id\": 12,\n                \"trace\": \"activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'\"\n            },\n            {\n                \"id\": 13,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'\"\n            },\n            {\n                \"id\": 14,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'\"\n            },\n            {\n                \"id\": 15,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'\"\n            },\n            {\n                \"id\": 16,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'\"\n            },\n            {\n                \"id\": 17,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'\"\n            },\n            {\n                \"id\": 18,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'\"\n            },\n            {\n                \"id\": 19,\n                \"trace\": \"railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'\"\n            },\n            {\n                \"id\": 20,\n                \"trace\": \"railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'\"\n            },\n            {\n                \"id\": 21,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'\"\n            },\n            {\n                \"id\": 22,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'\"\n            },\n            {\n                \"id\": 23,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'\"\n            },\n            {\n                \"id\": 24,\n                \"trace\": \"railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'\"\n            },\n            {\n                \"id\": 25,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'\"\n            },\n            {\n                \"id\": 26,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'\"\n            },\n            {\n                \"id\": 27,\n                \"trace\": \"rack (2.0.3) lib/rack/runtime.rb:22:in `call'\"\n            },\n            {\n                \"id\": 28,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'\"\n            },\n            {\n                \"id\": 29,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'\"\n            },\n            {\n                \"id\": 30,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'\"\n            },\n            {\n                \"id\": 31,\n                \"trace\": \"rack (2.0.3) lib/rack/sendfile.rb:111:in `call'\"\n            },\n            {\n                \"id\": 32,\n                \"trace\": \"rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'\"\n            },\n            {\n                \"id\": 33,\n                \"trace\": \"railties (5.1.4) lib/rails/engine.rb:522:in `call'\"\n            },\n            {\n                \"id\": 34,\n                \"trace\": \"puma (3.10.0) lib/puma/configuration.rb:225:in `call'\"\n            },\n            {\n                \"id\": 35,\n                \"trace\": \"puma (3.10.0) lib/puma/server.rb:605:in `handle_request'\"\n            },\n            {\n                \"id\": 36,\n                \"trace\": \"puma (3.10.0) lib/puma/server.rb:437:in `process_client'\"\n            },\n            {\n                \"id\": 37,\n                \"trace\": \"puma (3.10.0) lib/puma/server.rb:301:in `block in run'\"\n            },\n            {\n                \"id\": 38,\n                \"trace\": \"puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
 			"name": "Article CREATE",
 			"request": {
 				"auth": {
@@ -83,7 +264,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM1MjQ0MjF9.7yodFh_xFQP2B6i8StS-cNtKwTmAOo9WrIsKeakGDPg",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM1MzY0MTh9.UYlJpvLOYaGYnFDs8mabfjWhpi6l45wd4_TICDVWiV4",
 							"type": "string"
 						}
 					]
@@ -99,7 +280,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n       \"title\": \"How to Travel on Airplanes With a Machin Gun\",\n        \"slug\": \"how-to-travel-on-airplanes-with-a-gun-st9ohd\",\n        \"body\": \"If you enjoy shooting in places far from your home, you will probably need to carry a gun (and ammunition) on an airplane to get to your destination. While most 'gun destinations' cater to high power rifles and shotguns, many 'destinations' are for target-shooting matches where the guns are more-typically .22 rifle and pistol and air rifle and pistols.\",\n        \"description\": \"none\",\n        \"category_id\": 18,\n       \"favorites_count\": null\n}"
+					"raw": "{\n       \"title\": \"How to Travel on Airplanes With a Machin Gun\",\n        \"body\": \"If you enjoy shooting in places far from your home, you will probably need to carry a gun (and ammunition) on an airplane to get to your destination. While most 'gun destinations' cater to high power rifles and shotguns, many 'destinations' are for target-shooting matches where the guns are more-typically .22 rifle and pistol and air rifle and pistols.\",\n        \"description\": \"none\",\n        \"category_id\": 18\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/articles/",
@@ -170,7 +351,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM1MjQ0MjF9.7yodFh_xFQP2B6i8StS-cNtKwTmAOo9WrIsKeakGDPg",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM1MzY2MTR9.H2TQVwAw-Dyx0-G36N-jIwIODNgWtMdBfurL4QDUxyM",
 							"type": "string"
 						}
 					]
@@ -189,7 +370,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/articles/3",
+					"raw": "http://localhost:3000/articles/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -197,7 +378,48 @@
 					"port": "3000",
 					"path": [
 						"articles",
-						"3"
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Article PUT",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM1MzY2MTR9.H2TQVwAw-Dyx0-G36N-jIwIODNgWtMdBfurL4QDUxyM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n       \"title\": \"How to Travel on Airplanes With a Machinf\",\n        \"body\": \"\",\n        \"description\": \"If you enjoy shooting in places far from your home, you will probably need to carry a gun (and ammunition) on an airplane to get to your destination. While most 'gun destinations' cater to high power rifles and shotguns, many 'destinations' are for target-shooting matches where the guns are more-typically .22 rifle and pistol and air rifle and pistols.\",\n        \"category_id\": 18\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/articles/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles",
+						""
 					]
 				}
 			},
@@ -442,6 +664,49 @@
 			]
 		},
 		{
+			"name": "Comment PUT",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM1MjQ0MjF9.7yodFh_xFQP2B6i8StS-cNtKwTmAOo9WrIsKeakGDPg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n       \"body\": \"a nice comment\"\n       \n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/articles/1/comments/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"articles",
+						"1",
+						"comments",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Comment DELETE",
 			"request": {
 				"auth": {
@@ -547,7 +812,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM1MjQ0MjF9.7yodFh_xFQP2B6i8StS-cNtKwTmAOo9WrIsKeakGDPg",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM1NDExNTZ9.ftaD5a6Yoo4GXl7onpSB9g7vrAvAnkCL2kEhmF11a8o",
 							"type": "string"
 						}
 					]
@@ -563,7 +828,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n        \"name\": \"Biology\"\n}"
+					"raw": "{\n        \"name\": \"My new category\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/categories",
@@ -718,49 +983,6 @@
 					"body": "{\n    \"status\": 404,\n    \"error\": \"Not Found\",\n    \"exception\": \"#<AbstractController::ActionNotFound: The action 'index' could not be found for CommentsController>\",\n    \"traces\": {\n        \"Application Trace\": [],\n        \"Framework Trace\": [\n            {\n                \"id\": 0,\n                \"trace\": \"actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'\"\n            },\n            {\n                \"id\": 1,\n                \"trace\": \"actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'\"\n            },\n            {\n                \"id\": 2,\n                \"trace\": \"actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'\"\n            },\n            {\n                \"id\": 3,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'\"\n            },\n            {\n                \"id\": 4,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'\"\n            },\n            {\n                \"id\": 5,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'\"\n            },\n            {\n                \"id\": 6,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'\"\n            },\n            {\n                \"id\": 7,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'\"\n            },\n            {\n                \"id\": 8,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'\"\n            },\n            {\n                \"id\": 9,\n                \"trace\": \"rack (2.0.3) lib/rack/etag.rb:25:in `call'\"\n            },\n            {\n                \"id\": 10,\n                \"trace\": \"rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'\"\n            },\n            {\n                \"id\": 11,\n                \"trace\": \"rack (2.0.3) lib/rack/head.rb:12:in `call'\"\n            },\n            {\n                \"id\": 12,\n                \"trace\": \"activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'\"\n            },\n            {\n                \"id\": 13,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'\"\n            },\n            {\n                \"id\": 14,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'\"\n            },\n            {\n                \"id\": 15,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'\"\n            },\n            {\n                \"id\": 16,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'\"\n            },\n            {\n                \"id\": 17,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'\"\n            },\n            {\n                \"id\": 18,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'\"\n            },\n            {\n                \"id\": 19,\n                \"trace\": \"railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'\"\n            },\n            {\n                \"id\": 20,\n                \"trace\": \"railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'\"\n            },\n            {\n                \"id\": 21,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'\"\n            },\n            {\n                \"id\": 22,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'\"\n            },\n            {\n                \"id\": 23,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'\"\n            },\n            {\n                \"id\": 24,\n                \"trace\": \"railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'\"\n            },\n            {\n                \"id\": 25,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'\"\n            },\n            {\n                \"id\": 26,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'\"\n            },\n            {\n                \"id\": 27,\n                \"trace\": \"rack (2.0.3) lib/rack/runtime.rb:22:in `call'\"\n            },\n            {\n                \"id\": 28,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'\"\n            },\n            {\n                \"id\": 29,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'\"\n            },\n            {\n                \"id\": 30,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'\"\n            },\n            {\n                \"id\": 31,\n                \"trace\": \"rack (2.0.3) lib/rack/sendfile.rb:111:in `call'\"\n            },\n            {\n                \"id\": 32,\n                \"trace\": \"rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'\"\n            },\n            {\n                \"id\": 33,\n                \"trace\": \"railties (5.1.4) lib/rails/engine.rb:522:in `call'\"\n            },\n            {\n                \"id\": 34,\n                \"trace\": \"puma (3.10.0) lib/puma/configuration.rb:225:in `call'\"\n            },\n            {\n                \"id\": 35,\n                \"trace\": \"puma (3.10.0) lib/puma/server.rb:605:in `handle_request'\"\n            },\n            {\n                \"id\": 36,\n                \"trace\": \"puma (3.10.0) lib/puma/server.rb:437:in `process_client'\"\n            },\n            {\n                \"id\": 37,\n                \"trace\": \"puma (3.10.0) lib/puma/server.rb:301:in `block in run'\"\n            },\n            {\n                \"id\": 38,\n                \"trace\": \"puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'\"\n            }\n        ],\n        \"Full Trace\": [\n            {\n                \"id\": 0,\n                \"trace\": \"actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'\"\n            },\n            {\n                \"id\": 1,\n                \"trace\": \"actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'\"\n            },\n            {\n                \"id\": 2,\n                \"trace\": \"actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'\"\n            },\n            {\n                \"id\": 3,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'\"\n            },\n            {\n                \"id\": 4,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'\"\n            },\n            {\n                \"id\": 5,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'\"\n            },\n            {\n                \"id\": 6,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'\"\n            },\n            {\n                \"id\": 7,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'\"\n            },\n            {\n                \"id\": 8,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'\"\n            },\n            {\n                \"id\": 9,\n                \"trace\": \"rack (2.0.3) lib/rack/etag.rb:25:in `call'\"\n            },\n            {\n                \"id\": 10,\n                \"trace\": \"rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'\"\n            },\n            {\n                \"id\": 11,\n                \"trace\": \"rack (2.0.3) lib/rack/head.rb:12:in `call'\"\n            },\n            {\n                \"id\": 12,\n                \"trace\": \"activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'\"\n            },\n            {\n                \"id\": 13,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'\"\n            },\n            {\n                \"id\": 14,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'\"\n            },\n            {\n                \"id\": 15,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'\"\n            },\n            {\n                \"id\": 16,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'\"\n            },\n            {\n                \"id\": 17,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'\"\n            },\n            {\n                \"id\": 18,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'\"\n            },\n            {\n                \"id\": 19,\n                \"trace\": \"railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'\"\n            },\n            {\n                \"id\": 20,\n                \"trace\": \"railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'\"\n            },\n            {\n                \"id\": 21,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'\"\n            },\n            {\n                \"id\": 22,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'\"\n            },\n            {\n                \"id\": 23,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'\"\n            },\n            {\n                \"id\": 24,\n                \"trace\": \"railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'\"\n            },\n            {\n                \"id\": 25,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'\"\n            },\n            {\n                \"id\": 26,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'\"\n            },\n            {\n                \"id\": 27,\n                \"trace\": \"rack (2.0.3) lib/rack/runtime.rb:22:in `call'\"\n            },\n            {\n                \"id\": 28,\n                \"trace\": \"activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'\"\n            },\n            {\n                \"id\": 29,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'\"\n            },\n            {\n                \"id\": 30,\n                \"trace\": \"actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'\"\n            },\n            {\n                \"id\": 31,\n                \"trace\": \"rack (2.0.3) lib/rack/sendfile.rb:111:in `call'\"\n            },\n            {\n                \"id\": 32,\n                \"trace\": \"rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'\"\n            },\n            {\n                \"id\": 33,\n                \"trace\": \"railties (5.1.4) lib/rails/engine.rb:522:in `call'\"\n            },\n            {\n                \"id\": 34,\n                \"trace\": \"puma (3.10.0) lib/puma/configuration.rb:225:in `call'\"\n            },\n            {\n                \"id\": 35,\n                \"trace\": \"puma (3.10.0) lib/puma/server.rb:605:in `handle_request'\"\n            },\n            {\n                \"id\": 36,\n                \"trace\": \"puma (3.10.0) lib/puma/server.rb:437:in `process_client'\"\n            },\n            {\n                \"id\": 37,\n                \"trace\": \"puma (3.10.0) lib/puma/server.rb:301:in `block in run'\"\n            },\n            {\n                \"id\": 38,\n                \"trace\": \"puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'\"\n            }\n        ]\n    }\n}"
 				}
 			]
-		},
-		{
-			"name": "Tag READ not working",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM1MjQ0MjF9.7yodFh_xFQP2B6i8StS-cNtKwTmAOo9WrIsKeakGDPg",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n       \"title\": \"article2\",\n       \"slug\": \"article-2\",\n       \"body\": \"bpbpbpbp\",\n       \"description\": \"trewertrew\",\n       \"favorites_count\": 12,\n       \"user_id\": null,\n       \"created_at\": null,\n       \"updated_at\": null\n}"
-				},
-				"url": {
-					"raw": "http://localhost:3000/articles",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"articles"
-					]
-				}
-			},
-			"response": []
 		}
 	]
 }

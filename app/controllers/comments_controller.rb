@@ -15,22 +15,22 @@ class CommentsController < ApplicationController
   def index
     @comments = @article.comments.order(created_at: :desc)
 
-    render json: @comments
+    render json: @comments, status: 200
   end
 
   def show
     @comments = @article.comments.order(created_at: :desc)
     @comment = Comment.find(params[:id])
-    render json: @comments
+    render json: @comments, status: 200
   end
 
   def create
     @comment = @article.comments.new(comment_params)
     @comment.user = current_user
-
+    
     if @comment.save
 
-      render json: { message: "Comment created" }
+      render json: @comment, status: 201
     else
       render json: { errors: @comment.errors }
     end

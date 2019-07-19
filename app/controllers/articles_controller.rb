@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
 
         @articles = Article.order(created_at: :desc).offset(params[:offset] || 0).limit(params[:limit] || 20)
 
-        render json: @articles
+        render json: @articles, status: 200
 
     end
 
@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
           if @article.save
             @article = Article.find_by(title: params[:title])
 
-            render json: @article
+            render json: @article, status: 201
           else
             render json: { errors: @article.errors }, status: :unprocessable_entity
           end
@@ -44,7 +44,7 @@ class ArticlesController < ApplicationController
     def show
         @article = Article.find_by(id: params[:id])
 
-        render json: @article
+        render json: @article, status: 200
     end
 
     def update

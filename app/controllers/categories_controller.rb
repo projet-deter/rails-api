@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
 
-    render json: @categories
+    render json: @categories, status: 200
   end
 
   def create
@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
         if @category.save
           @category = Category.find_by(name: params[:name])
 
-          render json: @category
+          render json: @category, status: 201
         else
           render json: { errors: @category.errors }, status: :unprocessable_entity
         end

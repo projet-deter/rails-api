@@ -6,6 +6,5 @@ class Article < ApplicationRecord
 
   validates :title, presence: true, allow_blank: false
   validates :description, presence: true, allow_blank: false
-  validates :category_id, presence: true, allow_blank: false
 
 end

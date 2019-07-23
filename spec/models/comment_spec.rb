@@ -2,7 +2,23 @@ require "rails_helper"
 
 RSpec.describe Comment, type: :model do
   subject {
-    described_class.new(body: 'Ceci est un commentaire')
+    user = User.new(
+      email: 'tony@stark.com',
+      password: 'azerty',
+      name: 'Tony Stark'
+    )
+    category = Category.new(name: "Catégorie")
+    article = Article.new(
+      title: 'Un nouvel article',
+      description: 'Ceci est un nouvel article',
+      user: user,
+      category: category
+    )
+    described_class.new(
+      body: 'Ceci est un commentaire',
+      user: user,
+      article: article
+    )
   }
 
   describe 'validation' do

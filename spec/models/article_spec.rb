@@ -2,9 +2,17 @@ require "rails_helper"
 
 RSpec.describe Article, type: :model do
   subject {
+    user = User.new(
+      email: 'tony@stark.com',
+      password: 'azerty',
+      name: 'Tony Stark'
+    )
+    category = Category.new(name: "Catégorie")
     described_class.new(
       title: 'Un nouvel article',
-      description: 'Ceci est un nouvel article'
+      description: 'Ceci est un nouvel article',
+      user: user,
+      category: category
     )
   }
 

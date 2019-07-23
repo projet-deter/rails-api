@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   email = 'tony@stark.com'
-  password = ''
+  password = 'azerty'
   name = 'Tony Stark'
 
   # ALL FIELDS

@@ -21,7 +21,19 @@ RSpec.describe Comment, type: :model do
     )
   }
 
-  describe 'validation' do
+  # describe "Associations" do
+  #   it "has one user" do
+  #     assc = described_class.reflect_on_association(:user)
+  #     expect(assc.macro).to eq :has_one
+  #   end
+  
+  #   it "has one Article" do
+  #     assc = described_class.reflect_on_association(:article)
+  #     expect(assc.macro).to eq :has_one
+  #   end
+  # end
+  
+  describe 'Validations' do
     # IS VALID
     it 'is valid with valid attributes' do
       expect(subject).to be_valid

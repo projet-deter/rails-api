@@ -5,7 +5,7 @@ RSpec.describe Category, type: :model do
     described_class.new(name: 'Catégorie')
   }
 
-  describe 'validation' do
+  describe 'Validations' do
     # IS VALID
     it 'is valid with valid attributes' do
       expect(subject).to be_valid
